@@ -40,7 +40,7 @@ class MyHomePage extends StatelessWidget {
         ),
       ),
       body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
+        //mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Card(
@@ -54,17 +54,43 @@ class MyHomePage extends StatelessWidget {
             ),
             elevation: 5,
           ),
-          Container(
-            width: 120,
-            child: Card(
-              elevation: 5,
-              color: Colors.red[300],
-              child: Text(
-                'Another one!',
-                textScaleFactor: 2,
-              ),
+          Card(
+            elevation: 5,
+            child: Container(
+              padding: EdgeInsets.all(10),
+              child:
+                  Column(crossAxisAlignment: CrossAxisAlignment.end, children: [
+                TextField(
+                  autofocus: true,
+                  decoration: InputDecoration(labelText: 'Title'),
+                ),
+                TextField(
+                  cursorColor: Colors.deepOrange,
+                  decoration: InputDecoration(labelText: 'Amount'),
+                ),
+                Card(
+                  elevation: 3,
+                  child: FlatButton(
+                      onPressed: () => {},
+                      child: Text(
+                        'Add Transaction',
+                        style: TextStyle(color: Colors.grey[600]),
+                      )),
+                )
+              ]),
             ),
           ),
+          // Container(
+          //   width: 120,
+          //   child: Card(
+          //     elevation: 5,
+          //     color: Colors.red[300],
+          //     child: Text(
+          //       'Another one!',
+          //       textScaleFactor: 2,
+          //     ),
+          //   ),
+          // ),
           Column(
             children: transaction
                 .map((tx) => Card(
