@@ -1,3 +1,4 @@
+import 'package:first_app/models/transaction.dart';
 import 'package:first_app/widgets/new_transactions.dart';
 import 'package:first_app/widgets/transaction_list.dart';
 import 'package:first_app/widgets/user_transaction.dart';
@@ -44,6 +45,7 @@ class MyHomePage extends StatelessWidget {
               ),
               elevation: 5,
             ),
+
             UserTransactions(),
             // Container(
             //   width: 120,
