@@ -25,6 +25,7 @@ class NewTransactions extends StatelessWidget {
               labelText: 'Amount',
             ),
             controller: amountController,
+            keyboardType: TextInputType.number,
           ),
           Card(
             elevation: 3,
