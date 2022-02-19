@@ -18,6 +18,7 @@ class NewTransactions extends StatelessWidget {
             autofocus: true,
             decoration: InputDecoration(labelText: 'Title'),
             controller: titleController,
+            onSubmitted: (_) => submitData(),
           ),
           TextField(
             cursorColor: Colors.deepOrange,
@@ -26,16 +27,12 @@ class NewTransactions extends StatelessWidget {
             ),
             controller: amountController,
             keyboardType: TextInputType.number,
+            onSubmitted: (_) => submitData(),
           ),
           Card(
             elevation: 3,
             child: TextButton(
-                onPressed: () {
-                  addTx(
-                    titleController.text,
-                    double.parse(amountController.text),
-                  );
-                },
+                onPressed: submitData,
                 child: Text(
                   'Add Transaction',
                   style: TextStyle(color: Colors.grey[600]),
@@ -43,6 +40,18 @@ class NewTransactions extends StatelessWidget {
           )
         ]),
       ),
+    );
+  }
+
+  submitData() {
+    final enteredTitle = titleController.text;
+    final enteredAmount = double.parse(amountController.text);
+
+    if (enteredTitle.isEmpty || enteredAmount < 0) return;
+
+    addTx(
+      enteredTitle,
+      enteredAmount,
     );
   }
 }
