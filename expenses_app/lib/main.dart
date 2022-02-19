@@ -28,34 +28,36 @@ class MyHomePage extends StatelessWidget {
           textAlign: TextAlign.center,
         ),
       ),
-      body: Column(
-        //mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          Card(
-            color: Colors.blue[200],
-            child: Container(
-              child: Text(
-                'Hello',
-                textScaleFactor: 3,
+      body: SingleChildScrollView(
+        child: Column(
+          //mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Card(
+              color: Colors.blue[200],
+              child: Container(
+                child: Text(
+                  'Hello',
+                  textScaleFactor: 3,
+                ),
+                width: double.infinity,
               ),
-              width: double.infinity,
+              elevation: 5,
             ),
-            elevation: 5,
-          ),
-          UserTransactions(),
-          // Container(
-          //   width: 120,
-          //   child: Card(
-          //     elevation: 5,
-          //     color: Colors.red[300],
-          //     child: Text(
-          //       'Another one!',
-          //       textScaleFactor: 2,
-          //     ),
-          //   ),
-          // ),
-        ],
+            UserTransactions(),
+            // Container(
+            //   width: 120,
+            //   child: Card(
+            //     elevation: 5,
+            //     color: Colors.red[300],
+            //     child: Text(
+            //       'Another one!',
+            //       textScaleFactor: 2,
+            //     ),
+            //   ),
+            // ),
+          ],
+        ),
       ),
     );
   }
